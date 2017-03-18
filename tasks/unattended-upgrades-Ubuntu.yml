@@ -1,0 +1,34 @@
+---
+- name: include OS-dependent variables
+  include_vars:
+    file: os_{{ ansible_lsb.id }}.yml
+
+- name: install unattended-upgrades
+  apt:
+    name: unattended-upgrades
+    state: present
+
+- name: install update-notifier-common
+  apt:
+    name: update-notifier-common
+    state: present
+
+- name: copy 10periodic
+  copy:
+    src: 10periodic
+    dest: /etc/apt/apt.conf.d
+
+- name: template 50unattended-upgrades
+  template:
+    src: 50unattended-upgrades.j2
+    dest: /etc/apt/apt.conf.d/50unattended-upgrades
+
+- name: remove systemd hack from apt-compat
+  replace:
+    dest: /etc/cron.daily/apt-compat
+    regexp: 'if \[ -d /run/systemd/system \]; then\n.+\nfi\n'
+
+- name: disable apt-daily.timer
+  command: systemctl disable apt-daily.timer
+  args:
+    removes: /etc/systemd/system/timers.target.wants/apt-daily.timer

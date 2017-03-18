@@ -1,0 +1,6 @@
+---
+- include: pre-tasks.yml
+- include: secure-secure-shell.yml
+- include: unattended-upgrades-{{ ansible_distribution }}.yml
+- include: user-sanity.yml
+- include: post-tasks.yml

@@ -1,0 +1,83 @@
+basics
+======
+
+Basic setup for Debian-based systems.
+
+This role installs (among other things) an improved SSH configuration (i.e.
+public key login only, secure algorithms) and configures unattended upgrades.
+
+Requirements
+------------
+
+- Debian Jessie or later
+- Ubuntu Xenial or later
+
+Role Variables
+--------------
+
+Please see [defaults/main.yml](defaults/main.yml) for default values.
+
+<table>
+<tr>
+  <th>Variable</th>
+  <th>Description</th>
+</tr>
+<tr>
+  <td>basics_autoupdate_mail</td>
+  <td>Email address to send unattended upgrades notifications to.</td>
+</tr>
+<tr>
+  <td>basics_autoupdate_origins</td>
+  <td>
+    Additional list of <tt>Origins-Pattern</tt> values. Any regular, security
+    and backports updates provided by the distribution are allowed by default.
+  </td>
+</tr>
+<tr>
+  <td>basics_autoupdate_reboot</td>
+  <td>
+    Allow automatic reboots for unattended upgrades.
+    This is either <tt>true</tt> or <tt>false</tt> as a string value.
+  </td>
+</tr>
+<tr>
+  <td>basics_autoupdate_reboot_time</td>
+  <td>Time for automatic reboots.</td>
+</tr>
+<tr>
+  <td>basics_packages_install</td>
+  <td>List of packages that are always installed.</td>
+</tr>
+<tr>
+  <td>basics_packages_remove</td>
+  <td>List of packages that are always removed.</td>
+</tr>
+<tr>
+  <td>basics_services_disable</td>
+  <td>List of services that are always disabled.</td>
+</tr>
+<tr>
+  <td>basics_ssh_match_blocks</td>
+  <td>List of <tt>Match</tt> blocks for <i>sshd_config</i> (see below).</td>
+</tr>
+</table>
+
+SSH Match Blocks
+----------------
+
+Example `Match` block configuration:
+
+    basics_ssh_match_blocks:
+      - match: User sftpuser
+        options:
+          - ForceCommand internal-sftp
+
+Resulting entry in *sshd_config*:
+
+    Match User sftpuser
+      ForceCommand internal-sftp
+
+License
+-------
+
+GPLv3

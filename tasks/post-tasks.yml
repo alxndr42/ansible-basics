@@ -1,0 +1,21 @@
+---
+- name: disable selected services
+  service:
+    name: "{{ item }}"
+    state: stopped
+    enabled: no
+  with_items: "{{ basics_services_disable }}"
+
+- name: remove selected packages
+  apt:
+    name: "{{ item }}"
+    state: absent
+    autoremove: yes
+    purge: yes
+  with_items: "{{ basics_packages_remove }}"
+
+- name: install selected packages
+  apt:
+    name: "{{ item }}"
+    state: present
+  with_items: "{{ basics_packages_install }}"

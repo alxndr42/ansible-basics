@@ -1,0 +1,5 @@
+---
+default_origins:
+  - o=Ubuntu,a=${distro_codename}-security
+  - o=Ubuntu,a=${distro_codename}-updates
+  - o=Ubuntu,a=${distro_codename}-backports
