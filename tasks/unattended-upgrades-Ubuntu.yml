@@ -3,15 +3,14 @@
   include_vars:
     file: os_{{ ansible_lsb.id }}.yml
 
-- name: install unattended-upgrades
+- name: install required packages
   apt:
-    name: unattended-upgrades
+    name: "{{ item }}"
     state: present
-
-- name: install update-notifier-common
-  apt:
-    name: update-notifier-common
-    state: present
+  with_items:
+    - cron
+    - unattended-upgrades
+    - update-notifier-common
 
 - name: copy 10periodic
   copy:

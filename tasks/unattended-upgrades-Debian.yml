@@ -3,10 +3,13 @@
   include_vars:
     file: os_{{ ansible_lsb.id }}.yml
 
-- name: install unattended-upgrades
+- name: install required packages
   apt:
-    name: unattended-upgrades
+    name: "{{ item }}"
     state: present
+  with_items:
+    - cron
+    - unattended-upgrades
 
 - name: copy 10periodic
   copy:
