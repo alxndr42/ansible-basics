@@ -5,6 +5,8 @@ Basic setup for Debian-based systems.
 
 This role installs (among other things) an improved SSH configuration (i.e.
 public key login only, secure algorithms) and configures unattended upgrades.
+Security updates provided by the distribution will always be installed,
+non-security updates can optionally be allowed.
 
 Requirements
 ------------
@@ -27,11 +29,12 @@ Please see [defaults/main.yml](defaults/main.yml) for default values.
   <td>Email address to send unattended upgrades notifications to.</td>
 </tr>
 <tr>
+  <td>basics_autoupdate_non_security</td>
+  <td>Install non-security updates provided by the distribution.</td>
+</tr>
+<tr>
   <td>basics_autoupdate_origins</td>
-  <td>
-    Additional list of <tt>Origins-Pattern</tt> values. Any regular, security
-    and backports updates provided by the distribution are allowed by default.
-  </td>
+  <td>Additional list of <tt>Origins-Pattern</tt> values.</td>
 </tr>
 <tr>
   <td>basics_autoupdate_reboot</td>

@@ -1,5 +1,6 @@
 ---
 basics_autoupdate_mail: ""
+basics_autoupdate_non_security: false
 basics_autoupdate_origins: []
 basics_autoupdate_reboot: "true"
 basics_autoupdate_reboot_time: "07:00"

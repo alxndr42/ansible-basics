@@ -21,9 +21,14 @@
 //   ${distro_id}            Installed origin.
 //   ${distro_codename}      Installed codename (eg, "jessie")
 Unattended-Upgrade::Origins-Pattern {
+{% for origin in default_origins_security %}
+  "{{ origin }}";
+{% endfor %}
+{% if basics_autoupdate_non_security %}
 {% for origin in default_origins %}
   "{{ origin }}";
 {% endfor %}
+{% endif %}
 {% for origin in basics_autoupdate_origins %}
   "{{ origin }}";
 {% endfor %}
