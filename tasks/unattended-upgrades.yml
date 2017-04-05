@@ -10,7 +10,12 @@
   with_items:
     - cron
     - unattended-upgrades
-    - update-notifier-common
+
+- name: install update-notifier-common
+  apt:
+    name: update-notifier-common
+    state: present
+  when: ansible_distribution == "Ubuntu"
 
 - name: copy 10periodic
   copy:
@@ -22,10 +27,15 @@
     src: 50unattended-upgrades.j2
     dest: /etc/apt/apt.conf.d/50unattended-upgrades
 
+- name: check for apt-compat
+  stat: path=/etc/cron.daily/apt-compat
+  register: f
+
 - name: remove systemd hack from apt-compat
   replace:
     dest: /etc/cron.daily/apt-compat
     regexp: 'if \[ -d /run/systemd/system \]; then\n.+\nfi\n'
+  when: f.stat.exists
 
 - name: disable apt-daily.timer
   command: systemctl disable apt-daily.timer
