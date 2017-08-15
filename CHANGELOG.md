@@ -1,6 +1,10 @@
 Changelog
 =========
 
+1.2.0
+-----
+* Override apt systemd timer(s) properly
+
 1.1.1
 -----
 * Combine unattended-upgrades tasks
