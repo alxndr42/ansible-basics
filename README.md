@@ -19,6 +19,10 @@ Please see [defaults/main.yml](defaults/main.yml) for default values.
   <th>Description</th>
 </tr>
 <tr>
+  <td>basics_autoupdate_blacklist</td>
+  <td>List of packages that must not be automatically updated.</td>
+</tr>
+<tr>
   <td>basics_autoupdate_mail</td>
   <td>Email address to send unattended upgrades notifications to.</td>
 </tr>

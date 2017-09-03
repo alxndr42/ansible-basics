@@ -1,4 +1,5 @@
 ---
+basics_autoupdate_blacklist: []
 basics_autoupdate_mail: ""
 basics_autoupdate_non_security: false
 basics_autoupdate_origins: []
