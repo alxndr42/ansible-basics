@@ -1,8 +1,4 @@
 ---
-- name: include OS-dependent variables
-  include_vars:
-    file: os_{{ ansible_lsb.id }}.yml
-
 - name: install required packages
   apt:
     name: "{{ item }}"
