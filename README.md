@@ -46,6 +46,10 @@ Please see [defaults/main.yml](defaults/main.yml) for default values.
   <td>Time for automatic reboots.</td>
 </tr>
 <tr>
+  <td>basics_microcode_updates</td>
+  <td>Install CPU microcode updates.</td>
+</tr>
+<tr>
   <td>basics_packages_install</td>
   <td>List of packages that are always installed.</td>
 </tr>

@@ -1,6 +1,11 @@
 Changelog
 =========
 
+1.3.0
+-----
+* Add CPU microcode updates
+* Add autoupdate package blacklist
+
 1.2.0
 -----
 * Override apt systemd timer(s) properly
