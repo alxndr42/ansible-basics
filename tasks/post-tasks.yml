@@ -19,3 +19,15 @@
     name: "{{ item }}"
     state: present
   with_items: "{{ basics_packages_install }}"
+
+- name: install CPU microcode updates
+  apt:
+    name: "{{ item.package }}"
+    state: present
+  when:
+    - basics_microcode_updates
+    - ansible_processor[1] == item.vendor
+    - ansible_architecture == item.arch
+  with_items:
+    - { "vendor": "AuthenticAMD", "arch": "x86_64", "package": "amd64-microcode" }
+    - { "vendor": "GenuineIntel", "arch": "x86_64", "package": "intel-microcode" }

@@ -1,6 +1,11 @@
 Changelog
 =========
 
+1.3.1
+-----
+* Update CPU vendor check for Ansible 2.4
+* Bump minimum Ansible version to 2.4
+
 1.3.0
 -----
 * Add CPU microcode updates
