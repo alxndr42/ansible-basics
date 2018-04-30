@@ -23,7 +23,7 @@ Please see [defaults/main.yml](defaults/main.yml) for default values.
 </tr>
 <tr>
   <td>basics_autoupdate_mail</td>
-  <td>Email address to send unattended upgrades notifications to.</td>
+  <td>Email address to send unattended upgrades errors to.</td>
 </tr>
 <tr>
   <td>basics_autoupdate_non_security</td>
