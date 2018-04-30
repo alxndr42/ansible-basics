@@ -1,6 +1,13 @@
 Changelog
 =========
 
+1.4.0
+-----
+* Change default for automatic non-security updates to `true`
+* Update unattended-upgrades settings for Buster/Bionic
+* Remove unsupported OpenSSH MACs for Buster/Bionic
+* Remove apt systemd timer overrides
+
 1.3.1
 -----
 * Update CPU vendor check for Ansible 2.4

@@ -22,25 +22,3 @@
   template:
     src: 50unattended-upgrades.j2
     dest: /etc/apt/apt.conf.d/50unattended-upgrades
-
-- name: check for apt-daily timer
-  stat: path=/lib/systemd/system/apt-daily.timer
-  register: adt
-
-- name: adjust apt-daily timer
-  copy:
-    src: apt-daily-schedule.conf
-    dest: /etc/systemd/system/apt-daily.timer.d/
-  when: adt.stat.exists
-  notify: reload systemd
-
-- name: check for apt-daily-upgrade timer
-  stat: path=/lib/systemd/system/apt-daily-upgrade.timer
-  register: adut
-
-- name: adjust apt-daily-upgrade timer
-  copy:
-    src: apt-daily-upgrade-schedule.conf
-    dest: /etc/systemd/system/apt-daily-upgrade.timer.d/
-  when: adut.stat.exists
-  notify: reload systemd

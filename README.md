@@ -5,8 +5,7 @@ Basic setup for Debian-based systems.
 
 This role installs (among other things) an improved SSH configuration
 (i.e. public key login only, secure algorithms) and configures unattended
-upgrades. Security updates provided by the distribution will always be
-installed, non-security updates can optionally be allowed.
+upgrades.
 
 Role Variables
 --------------
