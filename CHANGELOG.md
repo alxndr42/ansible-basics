@@ -1,6 +1,10 @@
 Changelog
 =========
 
+1.4.2
+-----
+* Revert default for automatic non-security updates to `false`
+
 1.4.1
 -----
 * Change unattended-upgrades email to errors only

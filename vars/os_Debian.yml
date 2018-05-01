@@ -3,4 +3,5 @@ default_origins:
   - o=Debian,n=${distro_codename}-updates
   - o=Debian Backports,n=${distro_codename}-backports
 default_origins_security:
+  - o=Debian,n=${distro_codename},l=Debian
   - o=Debian,n=${distro_codename},l=Debian-Security
