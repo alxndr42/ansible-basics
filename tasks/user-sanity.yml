@@ -7,15 +7,14 @@
 
 - name: install user-friendly packages
   apt:
-    name: "{{ item }}"
+    name:
+      - htop
+      - less
+      - screen
+      - tree
+      - vim
+      - wget
     state: present
-  with_items:
-    - htop
-    - less
-    - screen
-    - tree
-    - vim
-    - wget
 
 - name: check for /etc/screenrc
   stat: path=/etc/screenrc

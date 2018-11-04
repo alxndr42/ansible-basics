@@ -1,6 +1,10 @@
 Changelog
 =========
 
+1.5.0
+-----
+* Update apt parameters for Ansible 2.7
+
 1.4.2
 -----
 * Revert default for automatic non-security updates to `false`

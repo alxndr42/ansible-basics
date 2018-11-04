@@ -8,17 +8,15 @@
 
 - name: remove selected packages
   apt:
-    name: "{{ item }}"
+    name: "{{ basics_packages_remove }}"
     state: absent
     autoremove: yes
     purge: yes
-  with_items: "{{ basics_packages_remove }}"
 
 - name: install selected packages
   apt:
-    name: "{{ item }}"
+    name: "{{ basics_packages_install }}"
     state: present
-  with_items: "{{ basics_packages_install }}"
 
 - name: install CPU microcode updates
   apt:

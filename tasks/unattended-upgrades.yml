@@ -1,11 +1,10 @@
 ---
 - name: install required packages
   apt:
-    name: "{{ item }}"
+    name:
+      - cron
+      - unattended-upgrades
     state: present
-  with_items:
-    - cron
-    - unattended-upgrades
 
 - name: install update-notifier-common
   apt:
