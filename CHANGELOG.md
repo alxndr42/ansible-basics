@@ -1,6 +1,10 @@
 Changelog
 =========
 
+1.5.1
+-----
+* Fix Ansible deprecation warning
+
 1.5.0
 -----
 * Update apt parameters for Ansible 2.7
