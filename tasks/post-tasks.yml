@@ -23,7 +23,7 @@
     name: "{{ item.package }}"
     state: present
   when:
-    - basics_microcode_updates
+    - basics_microcode_updates | bool
     - ansible_processor[1] == item.vendor
     - ansible_architecture == item.arch
   with_items:
