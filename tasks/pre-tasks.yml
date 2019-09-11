@@ -25,25 +25,3 @@
       - unzip
     state: present
     cache_valid_time: 86400
-
-- name: check for Python 2
-  stat:
-    path: /usr/bin/python2
-  register: python2
-
-- name: install python-apt
-  apt:
-    name: python-apt
-    state: present
-  when: python2.stat.exists
-
-- name: check for Python 3
-  stat:
-    path: /usr/bin/python3
-  register: python3
-
-- name: install python3-apt
-  apt:
-    name: python3-apt
-    state: present
-  when: python3.stat.exists
