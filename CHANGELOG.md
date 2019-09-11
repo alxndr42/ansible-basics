@@ -1,6 +1,11 @@
 Changelog
 =========
 
+1.5.2
+-----
+* Remove custom python-apt installation
+* Distribution fallback if ansible_lsb is empty
+
 1.5.1
 -----
 * Fix Ansible deprecation warning
