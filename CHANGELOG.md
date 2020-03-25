@@ -1,6 +1,10 @@
 Changelog
 =========
 
+1.5.3
+-----
+* Remove basics_autoupdate_reboot_time variable
+
 1.5.2
 -----
 * Remove custom python-apt installation
