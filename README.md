@@ -42,10 +42,6 @@ Please see [defaults/main.yml](defaults/main.yml) for default values.
   </td>
 </tr>
 <tr>
-  <td>basics_autoupdate_reboot_time</td>
-  <td>Time for automatic reboots.</td>
-</tr>
-<tr>
   <td>basics_microcode_updates</td>
   <td>Install CPU microcode updates.</td>
 </tr>

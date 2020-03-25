@@ -1,9 +1,7 @@
 ---
 - name: install required packages
   apt:
-    name:
-      - cron
-      - unattended-upgrades
+    name: unattended-upgrades
     state: present
 
 - name: install update-notifier-common
@@ -15,9 +13,9 @@
 - name: copy 10periodic
   copy:
     src: 10periodic
-    dest: /etc/apt/apt.conf.d
+    dest: /etc/apt/apt.conf.d/
 
 - name: template 50unattended-upgrades
   template:
-    src: 50unattended-upgrades.j2
-    dest: /etc/apt/apt.conf.d/50unattended-upgrades
+    src: 50unattended-upgrades
+    dest: /etc/apt/apt.conf.d/
