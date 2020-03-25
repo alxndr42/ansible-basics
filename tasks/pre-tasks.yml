@@ -1,5 +1,4 @@
 ---
-
 - name: use ansible_lsb distribution
   set_fact:
     distribution: "{{ ansible_lsb.id }}"
@@ -22,6 +21,7 @@
     name:
       - curl
       - git
+      - gpg
       - unzip
     state: present
     cache_valid_time: 86400
