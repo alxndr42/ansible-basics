@@ -4,6 +4,9 @@ basics_autoupdate_mail: ""
 basics_autoupdate_non_security: false
 basics_autoupdate_origins: []
 basics_autoupdate_reboot: "true"
+basics_journald_maxfile: "1day"
+basics_journald_maxretention: "30day"
+basics_journald_storage: "auto"
 basics_microcode_updates: true
 basics_packages_install: []
 basics_packages_remove: []

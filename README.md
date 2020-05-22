@@ -42,6 +42,18 @@ Please see [defaults/main.yml](defaults/main.yml) for default values.
   </td>
 </tr>
 <tr>
+  <td>basics_journald_maxfile</td>
+  <td>journald.conf <tt>MaxFileSec</tt> override.</td>
+</tr>
+<tr>
+  <td>basics_journald_maxretention</td>
+  <td>journald.conf <tt>MaxRetentionSec</tt> override.</td>
+</tr>
+<tr>
+  <td>basics_journald_storage</td>
+  <td>journald.conf <tt>Storage</tt> override.</td>
+</tr>
+<tr>
   <td>basics_microcode_updates</td>
   <td>Install CPU microcode updates.</td>
 </tr>

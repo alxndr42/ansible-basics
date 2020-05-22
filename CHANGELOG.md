@@ -1,6 +1,10 @@
 Changelog
 =========
 
+1.6.0
+-----
+* Add journald.conf retention overrides
+
 1.5.3
 -----
 * Remove basics_autoupdate_reboot_time variable
