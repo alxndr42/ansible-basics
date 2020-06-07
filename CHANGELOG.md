@@ -1,6 +1,10 @@
 Changelog
 =========
 
+1.7.0
+-----
+* Add UFW configuration
+
 1.6.0
 -----
 * Add journald.conf retention overrides

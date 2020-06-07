@@ -24,7 +24,7 @@ Please see [defaults/main.yml](defaults/main.yml) for default values.
 </tr>
 <tr>
   <td>basics_autoupdate_mail</td>
-  <td>Email address to send unattended upgrades errors to.</td>
+  <td>Email address to send unattended upgrade errors to.</td>
 </tr>
 <tr>
   <td>basics_autoupdate_non_security</td>
@@ -73,6 +73,18 @@ Please see [defaults/main.yml](defaults/main.yml) for default values.
   <td>basics_ssh_match_blocks</td>
   <td>List of <tt>Match</tt> blocks for <i>sshd_config</i> (see below).</td>
 </tr>
+<tr>
+  <td>basics_ufw</td>
+  <td>Configure and enable UFW.</td>
+</tr>
+<tr>
+  <td>basics_ufw_allow</td>
+  <td>List of UFW allow rules (see below).</td>
+</tr>
+<tr>
+  <td>basics_ufw_ssh</td>
+  <td>Allow SSH as the first UFW rule.</td>
+</tr>
 </table>
 
 SSH Match Blocks
@@ -80,15 +92,33 @@ SSH Match Blocks
 
 Example `Match` block configuration:
 
-    basics_ssh_match_blocks:
-      - match: User sftpuser
-        options:
-          - ForceCommand internal-sftp
+```yaml
+basics_ssh_match_blocks:
+  - match: User sftpuser
+    options:
+      - ForceCommand internal-sftp
+```
 
 Resulting entry in *sshd_config*:
 
-    Match User sftpuser
-      ForceCommand internal-sftp
+```
+Match User sftpuser
+  ForceCommand internal-sftp
+```
+
+UFW Allow Rules
+---------------
+
+Example UFW allow rules:
+
+```yaml
+- port: "53"
+  src: "192.168.1.0/24"
+- port: "80,443"
+  proto: tcp
+```
+
+Only the `port` property is required.
 
 License
 -------

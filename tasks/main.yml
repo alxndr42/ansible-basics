@@ -1,5 +1,7 @@
 ---
 - include: pre-tasks.yml
+- include: ufw.yml
+  when: basics_ufw
 - include: journald.yml
 - include: secure-secure-shell.yml
 - include: unattended-upgrades.yml

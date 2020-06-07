@@ -1,0 +1,23 @@
+---
+- name: install UFW
+  apt:
+    name: ufw
+
+- name: allow SSH
+  ufw:
+    rule: allow
+    port: "22"
+    proto: tcp
+  when: basics_ufw_ssh
+
+- name: allow rules
+  ufw:
+    rule: allow
+    from_ip: "{{ item.src|default('any') }}"
+    to_port: "{{ item.port }}"
+    proto: "{{ item.proto|default('any') }}"
+  with_items: "{{ basics_ufw_allow }}"
+
+- name: enable UFW
+  ufw:
+    state: enabled
