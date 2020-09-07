@@ -1,6 +1,7 @@
 ---
 - include: pre-tasks.yml
 - include: ufw.yml
+  tags: ufw
   when: basics_ufw
 - include: journald.yml
 - include: secure-secure-shell.yml

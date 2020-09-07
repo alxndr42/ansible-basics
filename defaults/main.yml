@@ -14,4 +14,5 @@ basics_services_disable: []
 basics_ssh_match_blocks: []
 basics_ufw: false
 basics_ufw_allow: []
+basics_ufw_deny: []
 basics_ufw_ssh: true

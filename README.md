@@ -79,7 +79,11 @@ Please see [defaults/main.yml](defaults/main.yml) for default values.
 </tr>
 <tr>
   <td>basics_ufw_allow</td>
-  <td>List of UFW allow rules (see below).</td>
+  <td>List of UFW <tt>allow</tt> rules (see below).</td>
+</tr>
+<tr>
+  <td>basics_ufw_deny</td>
+  <td>List of UFW <tt>deny</tt> rules (see below).</td>
 </tr>
 <tr>
   <td>basics_ufw_ssh</td>
@@ -106,19 +110,23 @@ Match User sftpuser
   ForceCommand internal-sftp
 ```
 
-UFW Allow Rules
----------------
+UFW Rules
+---------
 
-Example UFW allow rules:
+Example UFW rules:
 
 ```yaml
-- port: "53"
-  src: "192.168.1.0/24"
 - port: "80,443"
   proto: tcp
-```
 
-Only the `port` property is required.
+- src: "192.168.0.42"
+  src_port: 1234
+  dst: "192.168.0.1"
+  port: 53
+  proto: udp
+  interface: eth0
+  direction: in
+```
 
 License
 -------
