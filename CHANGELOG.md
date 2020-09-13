@@ -1,6 +1,10 @@
 Changelog
 =========
 
+1.8.0
+-----
+* Add UFW deny rules, support more parameters
+
 1.7.0
 -----
 * Add UFW configuration
