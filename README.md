@@ -42,6 +42,10 @@ Please see [defaults/main.yml](defaults/main.yml) for default values.
   </td>
 </tr>
 <tr>
+  <td>basics_history_disabled</td>
+  <td>Disable persistent history in Bash etc.</td>
+</tr>
+<tr>
   <td>basics_journald_maxfile</td>
   <td>journald.conf <tt>MaxFileSec</tt> override.</td>
 </tr>

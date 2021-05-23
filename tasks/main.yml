@@ -3,7 +3,7 @@
 - include: ufw.yml
   tags: ufw
   when: basics_ufw
-- include: journald.yml
+- include: data-retention.yml
 - include: secure-secure-shell.yml
 - include: unattended-upgrades.yml
 - include: user-sanity.yml
