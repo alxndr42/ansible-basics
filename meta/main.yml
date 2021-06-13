@@ -1,8 +1,0 @@
-galaxy_info:
-  author: Alexander Dietrich
-  description: Basic setup for Debian-based systems.
-  license: GPLv3
-  min_ansible_version: 2.7
-  galaxy_tags: []
-
-dependencies: []
