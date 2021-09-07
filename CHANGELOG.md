@@ -1,6 +1,11 @@
 Changelog
 =========
 
+1.9.0
+-----
+* Add basics_history_disabled variable
+* Add basics_ssh_root_login variable
+
 1.8.0
 -----
 * Add UFW deny rules, support more parameters
