@@ -78,6 +78,10 @@ Please see [defaults/main.yml](defaults/main.yml) for default values.
   <td>List of <tt>Match</tt> blocks for <i>sshd_config</i> (see below).</td>
 </tr>
 <tr>
+  <td>basics_ssh_root_login</td>
+  <td>Value of <tt>PermitRootLogin</tt> for <i>sshd_config</i>.</td>
+</tr>
+<tr>
   <td>basics_ufw</td>
   <td>Configure and enable UFW.</td>
 </tr>

@@ -12,7 +12,7 @@ PasswordAuthentication no
 PubkeyAuthentication yes
 
 IgnoreUserKnownHosts yes
-PermitRootLogin no
+PermitRootLogin {{ basics_ssh_root_login }}
 PrintMotd no
 StrictModes yes
 Subsystem sftp internal-sftp
