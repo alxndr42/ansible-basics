@@ -74,8 +74,16 @@ Please see [defaults/main.yml](defaults/main.yml) for default values.
   <td>List of services that are always disabled.</td>
 </tr>
 <tr>
+  <td>basics_ssh_listen</td>
+  <td>Values of <tt>ListenAddress</tt> for <i>sshd_config</i>.</td>
+</tr>
+<tr>
   <td>basics_ssh_match_blocks</td>
   <td>List of <tt>Match</tt> blocks for <i>sshd_config</i> (see below).</td>
+</tr>
+<tr>
+  <td>basics_ssh_port</td>
+  <td>Value of <tt>Port</tt> for <i>sshd_config</i>.</td>
 </tr>
 <tr>
   <td>basics_ssh_root_login</td>

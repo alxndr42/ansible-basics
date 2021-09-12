@@ -1,4 +1,7 @@
-Port 22
+{% for addr in basics_ssh_listen %}
+ListenAddress {{ addr }}
+{% endfor %}
+Port {{ basics_ssh_port }}
 Protocol 2
 HostKey /etc/ssh/ssh_host_ed25519_key
 HostKey /etc/ssh/ssh_host_rsa_key
