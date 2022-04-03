@@ -42,6 +42,22 @@ Please see [defaults/main.yml](defaults/main.yml) for default values.
   </td>
 </tr>
 <tr>
+  <td>basics_autoupdate_update_calendar</td>
+  <td><tt>OnCalendar</tt> value for <i>apt-daily.timer</i>.</td>
+</tr>
+<tr>
+  <td>basics_autoupdate_update_delay</td>
+  <td><tt>RandomizedDelaySec</tt> value for <i>apt-daily.timer</i>.</td>
+</tr>
+<tr>
+  <td>basics_autoupdate_upgrade_calendar</td>
+  <td><tt>OnCalendar</tt> value for <i>apt-daily-upgrade.timer</i>.</td>
+</tr>
+<tr>
+  <td>basics_autoupdate_upgrade_delay</td>
+  <td><tt>RandomizedDelaySec</tt> value for <i>apt-daily-upgrade.timer</i>.</td>
+</tr>
+<tr>
   <td>basics_history_disabled</td>
   <td>Disable persistent history in Bash etc.</td>
 </tr>
