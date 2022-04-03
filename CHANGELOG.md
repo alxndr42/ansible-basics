@@ -1,6 +1,11 @@
 Changelog
 =========
 
+1.10.0
+------
+* Add basics_ssh_listen/basics_ssh_port variables
+* Add variables for apt-daily/-upgrade timer overrides
+
 1.9.0
 -----
 * Add basics_history_disabled variable
