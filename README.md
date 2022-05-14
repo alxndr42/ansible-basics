@@ -1,130 +1,45 @@
-ansible-basics
-==============
+# ansible-basics
 
-Basic setup for Debian-based systems.
+Basic setup for Debian-based systems with systemd.
 
-This role installs (among other things) an improved SSH configuration
-(i.e. public key login only, secure algorithms) and configures unattended
-upgrades. Security updates provided by the distribution will always be
-installed, non-security updates can optionally be allowed.
+This role installs (among other things) an improved SSH configuration (i.e.
+public key login only, secure algorithms) and configures unattended upgrades.
+Security updates provided by the distribution will always be installed,
+non-security updates can optionally be allowed.
 
-Role Variables
---------------
+## Role Variables
 
 Please see [defaults/main.yml](defaults/main.yml) for default values.
 
-<table>
-<tr>
-  <th>Variable</th>
-  <th>Description</th>
-</tr>
-<tr>
-  <td>basics_autoupdate_blacklist</td>
-  <td>List of packages that must not be automatically updated.</td>
-</tr>
-<tr>
-  <td>basics_autoupdate_mail</td>
-  <td>Email address to send unattended upgrade errors to.</td>
-</tr>
-<tr>
-  <td>basics_autoupdate_non_security</td>
-  <td>Install non-security updates provided by the distribution.</td>
-</tr>
-<tr>
-  <td>basics_autoupdate_origins</td>
-  <td>Additional list of <tt>Origins-Pattern</tt> values.</td>
-</tr>
-<tr>
-  <td>basics_autoupdate_reboot</td>
-  <td>
-    Allow automatic reboots for unattended upgrades.
-    This is either <tt>true</tt> or <tt>false</tt> as a string value.
-  </td>
-</tr>
-<tr>
-  <td>basics_autoupdate_update_calendar</td>
-  <td><tt>OnCalendar</tt> value for <i>apt-daily.timer</i>.</td>
-</tr>
-<tr>
-  <td>basics_autoupdate_update_delay</td>
-  <td><tt>RandomizedDelaySec</tt> value for <i>apt-daily.timer</i>.</td>
-</tr>
-<tr>
-  <td>basics_autoupdate_upgrade_calendar</td>
-  <td><tt>OnCalendar</tt> value for <i>apt-daily-upgrade.timer</i>.</td>
-</tr>
-<tr>
-  <td>basics_autoupdate_upgrade_delay</td>
-  <td><tt>RandomizedDelaySec</tt> value for <i>apt-daily-upgrade.timer</i>.</td>
-</tr>
-<tr>
-  <td>basics_history_disabled</td>
-  <td>Disable persistent history in Bash etc.</td>
-</tr>
-<tr>
-  <td>basics_journald_maxfile</td>
-  <td>journald.conf <tt>MaxFileSec</tt> override.</td>
-</tr>
-<tr>
-  <td>basics_journald_maxretention</td>
-  <td>journald.conf <tt>MaxRetentionSec</tt> override.</td>
-</tr>
-<tr>
-  <td>basics_journald_storage</td>
-  <td>journald.conf <tt>Storage</tt> override.</td>
-</tr>
-<tr>
-  <td>basics_microcode_updates</td>
-  <td>Install CPU microcode updates.</td>
-</tr>
-<tr>
-  <td>basics_packages_install</td>
-  <td>List of packages that are always installed.</td>
-</tr>
-<tr>
-  <td>basics_packages_remove</td>
-  <td>List of packages that are always removed.</td>
-</tr>
-<tr>
-  <td>basics_services_disable</td>
-  <td>List of services that are always disabled.</td>
-</tr>
-<tr>
-  <td>basics_ssh_listen</td>
-  <td>Values of <tt>ListenAddress</tt> for <i>sshd_config</i>.</td>
-</tr>
-<tr>
-  <td>basics_ssh_match_blocks</td>
-  <td>List of <tt>Match</tt> blocks for <i>sshd_config</i> (see below).</td>
-</tr>
-<tr>
-  <td>basics_ssh_port</td>
-  <td>Value of <tt>Port</tt> for <i>sshd_config</i>.</td>
-</tr>
-<tr>
-  <td>basics_ssh_root_login</td>
-  <td>Value of <tt>PermitRootLogin</tt> for <i>sshd_config</i>.</td>
-</tr>
-<tr>
-  <td>basics_ufw</td>
-  <td>Configure and enable UFW.</td>
-</tr>
-<tr>
-  <td>basics_ufw_allow</td>
-  <td>List of UFW <tt>allow</tt> rules (see below).</td>
-</tr>
-<tr>
-  <td>basics_ufw_deny</td>
-  <td>List of UFW <tt>deny</tt> rules (see below).</td>
-</tr>
-<tr>
-  <td>basics_ufw_ssh</td>
-  <td>Allow SSH as the first UFW rule.</td>
-</tr>
-</table>
+| Variable | Description |
+| --- | --- |
+| `basics_autoupdate_blacklist` | List of packages that must not be automatically updated. |
+| `basics_autoupdate_mail` | Email address to send unattended upgrade errors to. |
+| `basics_autoupdate_non_security` | Install non-security updates provided by the distribution. |
+| `basics_autoupdate_origins` | Additional list of `Origins-Pattern` values. |
+| `basics_autoupdate_reboot` | Allow automatic reboots for unattended upgrades. This is either `true` or `false` as a string value. |
+| `basics_autoupdate_update_calendar` | `OnCalendar` value for *apt-daily.timer*. |
+| `basics_autoupdate_update_delay` | `RandomizedDelaySec` value for *apt-daily.timer*. |
+| `basics_autoupdate_upgrade_calendar` | `OnCalendar` value for *apt-daily-upgrade.timer*. |
+| `basics_autoupdate_upgrade_delay` | `RandomizedDelaySec` value for *apt-daily-upgrade.timer*. |
+| `basics_history_disabled` | Disable persistent history in Bash etc. |
+| `basics_journald_maxfile` | *journald.conf* `MaxFileSec` override. |
+| `basics_journald_maxretention` | *journald.conf* `MaxRetentionSec` override. |
+| `basics_journald_storage` | *journald.conf* `Storage` override. |
+| `basics_microcode_updates` | Install CPU microcode updates. |
+| `basics_packages_install` | List of packages that are always installed. |
+| `basics_packages_remove` | List of packages that are always removed. |
+| `basics_services_disable` | List of services that are always disabled. |
+| `basics_ssh_listen` | Values of `ListenAddress` for *sshd_config*. |
+| `basics_ssh_match_blocks` | List of `Match` blocks for *sshd_config* (see below). |
+| `basics_ssh_port` | Value of `Port` for *sshd_config*. |
+| `basics_ssh_root_login` | Value of `PermitRootLogin` for *sshd_config*. |
+| `basics_ufw_allow` | List of UFW `allow` rules (see below). |
+| `basics_ufw_deny` | List of UFW `deny` rules (see below). |
+| `basics_ufw_ssh` | Allow SSH as the first UFW rule. |
+| `basics_ufw` | Configure and enable UFW. |
 
-SSH Match Blocks
-----------------
+## SSH Match Blocks
 
 Example `Match` block configuration:
 
@@ -142,8 +57,7 @@ Match User sftpuser
   ForceCommand internal-sftp
 ```
 
-UFW Rules
----------
+## UFW Rules
 
 Example UFW rules:
 
@@ -160,7 +74,6 @@ Example UFW rules:
   direction: in
 ```
 
-License
--------
+## License
 
-GPLv3
+GNU General Public License v3 or later (GPLv3+)
