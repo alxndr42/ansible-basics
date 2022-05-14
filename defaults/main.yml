@@ -1,9 +1,10 @@
 ---
+basics: true
 basics_autoupdate_blacklist: []
 basics_autoupdate_mail: ""
 basics_autoupdate_non_security: false
 basics_autoupdate_origins: []
-basics_autoupdate_reboot: "true"
+basics_autoupdate_reboot: true
 basics_autoupdate_update_calendar: "*-*-* 4:00"
 basics_autoupdate_update_delay: "45m"
 basics_autoupdate_upgrade_calendar: "*-*-* 5:00"

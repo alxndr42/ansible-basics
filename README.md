@@ -17,7 +17,7 @@ Please see [defaults/main.yml](defaults/main.yml) for default values.
 | `basics_autoupdate_mail` | Email address to send unattended upgrade errors to. |
 | `basics_autoupdate_non_security` | Install non-security updates provided by the distribution. |
 | `basics_autoupdate_origins` | Additional list of `Origins-Pattern` values. |
-| `basics_autoupdate_reboot` | Allow automatic reboots for unattended upgrades. This is either `true` or `false` as a string value. |
+| `basics_autoupdate_reboot` | Allow automatic reboots for unattended upgrades. |
 | `basics_autoupdate_update_calendar` | `OnCalendar` value for *apt-daily.timer*. |
 | `basics_autoupdate_update_delay` | `RandomizedDelaySec` value for *apt-daily.timer*. |
 | `basics_autoupdate_upgrade_calendar` | `OnCalendar` value for *apt-daily-upgrade.timer*. |
