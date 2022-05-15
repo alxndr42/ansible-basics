@@ -5,3 +5,4 @@ default_origins:
 default_origins_security:
   - o=Debian,n=${distro_codename},l=Debian
   - o=Debian,n=${distro_codename},l=Debian-Security
+  - o=Debian,n=${distro_codename}-security,l=Debian-Security
