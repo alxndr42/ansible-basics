@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.11.0
+
+- Add new `Origins-Pattern` for Debian security updates
+- Change `basics_autoupdate_reboot` to boolean
+- Replace `include` with `include_tasks`
+
 ## 1.10.0
 
 - Add `basics_ssh_listen`/`basics_ssh_port` variables
